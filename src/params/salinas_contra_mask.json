@@ -1,0 +1,46 @@
+{
+    "data": {
+        "data_sign": "Salinas",
+        "diffusion_sign": false,
+        "patch_size": 13,
+        "test_ratio": 0.95,
+        "batch_size": 32,
+        "unlabelled_multiple": 1,
+        "num_classes": 16,
+        "pca": 30,
+        "dim_heads": 64,
+        "spectral_size": 30,
+        "perclass": 70,
+        "sample": 2
+    },
+    "net": {
+        "trainer": "guided_contra_cross_transformer",
+        "net_type": "just_pixel",
+        "mlp_head_dim": 64,
+        "depth": 3,
+        "dim": 32,
+        "heads": 16,
+        "conv3d_kernal_size": [
+            3,
+            3,
+            3
+        ],
+        "conv3d_padding": [
+            2,
+            1,
+            1
+        ]
+    },
+    "train": {
+        "pretrain_epochs": 100,
+        "contra_epochs": 200,
+        "lr": 0.001,
+        "weight_decay": 0,
+        "use_unlabel": true,
+        "weight": 0.1,
+        "temp": 10
+    },
+    "aug": {
+        "type": "Mask"
+    }
+}
